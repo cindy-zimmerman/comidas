@@ -74,6 +74,13 @@ CREATE TABLE IF NOT EXISTS `recipe_ingr` (
   CONSTRAINT `fk_recipe_ingr_3` FOREIGN KEY (`ingr_id`) REFERENCES `ingr` (`ingr_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+CREATE TABLE IF NOT EXISTS `meal_type` (
+  `meal_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `meal_type_name` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`meal_type_id`),
+  UNIQUE KEY `meal_type_name_UNIQUE` (`meal_type_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 CREATE TABLE IF NOT EXISTS `recipe_meal_type` (
   `recipe_name_id` int(11) NOT NULL,
   `meal_type_id` int(11) NOT NULL,
